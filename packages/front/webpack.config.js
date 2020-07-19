@@ -12,10 +12,11 @@ module.exports = {
   },
   module: {
     rules: [
+      // TODO: wansong, eslint loader
       { test: /\.tsx?$/, loader: 'ts-loader' },
       {
 	test: /\.css$/,
-	use: 'css-loader'
+	use: ['style-loader', 'css-loader', 'postcss-loader']
       },
       {
 	test: /\.(png|jp(e*)g|svg)$/,
