@@ -67,8 +67,8 @@
     "workbox-webpack-plugin": "4.3.1"
   },
   "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
+    "build": "webpack -p",
+    "start": "webpack-dev-server -d --content-base ./public",
     "test": "node scripts/test.js"
   },
   "eslintConfig": {
