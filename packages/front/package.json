@@ -142,6 +142,7 @@
     ]
   },
   "devDependencies": {
+    "css-loader": "^3.6.0",
     "file-loader": "^6.0.0",
     "ts-loader": "^8.0.1",
     "webpack-cli": "^3.3.12"

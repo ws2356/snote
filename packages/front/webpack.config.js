@@ -12,6 +12,10 @@ module.exports = {
     rules: [
       { test: /\.tsx?$/, loader: 'ts-loader' },
       {
+	test: /\.css$/,
+	use: 'css-loader'
+      },
+      {
 	test: /\.(png|jp(e*)g|svg)$/,
 	use: 'file-loader'
       }
