@@ -140,5 +140,9 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "ts-loader": "^8.0.1",
+    "webpack-cli": "^3.3.12"
   }
 }
