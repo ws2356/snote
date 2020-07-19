@@ -1,26 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
-function App() {
+import All from './all';
+import Popular from './popular';
+import Favored from './favor';
+import Search from './search';
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">All Notes</Link>
+            </li>
+            <li>
+              <Link to="/popular">Popular</Link>
+            </li>
+            <li>
+              <Link to="/favored">Favored</Link>
+            </li>
+            <li>
+              <Link to="/search">Search</Link>
+            </li>
+          </ul>
+        </nav>
+
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/popular">
+            <Popular />
+          </Route>
+          <Route path="/favored">
+            <Favored />
+          </Route>
+          <Route path="/search">
+            <Search />
+          </Route>
+          <Route path="/">
+            <All />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
-
-export default App;
