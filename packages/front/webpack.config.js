@@ -10,7 +10,11 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.tsx?$/, loader: 'ts-loader' }
+      { test: /\.tsx?$/, loader: 'ts-loader' },
+      {
+	test: /\.(png|jp(e*)g|svg)$/,
+	use: 'file-loader'
+      }
     ]
   }
 }
