@@ -30,9 +30,9 @@ module.exports = {
       template: 'src/template/index.html',
       favicon: 'src/template/favicon.ico',
       meta: {
-        viewport: 'width=device-width, initial-scale=1',
-        'theme-color': '#000000',
-        description: "Home page of snote"
+	viewport: 'width=device-width, initial-scale=1',
+	'theme-color': '#000000',
+	description: "Home page of snote"
       }
     })
   ]
