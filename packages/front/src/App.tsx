@@ -6,6 +6,8 @@ import {
   Link
 } from "react-router-dom";
 
+import './App.css';
+
 import All from './all';
 import Popular from './popular';
 import Favored from './favor';
