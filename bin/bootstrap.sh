@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 set -eu
 
-npx lerna bootstrap --strict
+if [ "$#" -gt 0 ] ; then
+  npx lerna bootstrap --strict -- "$@"
+else
+  npx lerna bootstrap --strict
+fi

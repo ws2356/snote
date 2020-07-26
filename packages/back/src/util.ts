@@ -1,5 +1,5 @@
 import { Response } from 'express'
-import { ec, err_msg } from './error'
+import { ec, err_msg } from 'error'
 
 export function isNil(value: any) {
   return value === undefined || value === null
