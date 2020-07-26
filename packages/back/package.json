@@ -1,5 +1,5 @@
 {
-  "name": "main",
+  "name": "snote",
   "version": "1.0.0",
   "description": "ts proj",
   "main": "dist/index.js",
