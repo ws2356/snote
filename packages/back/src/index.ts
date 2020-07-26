@@ -30,4 +30,7 @@ app.all('*', async (req, res) => {
   await dft.handleDefaultRoute(req, res)
 })
 
-app.listen(8787)
+const port = 8787
+app.listen(port, () => {
+  console.log(`snote listen on: ${port}`)
+})
