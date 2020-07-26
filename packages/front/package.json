@@ -63,7 +63,6 @@
     "error": "file:../error"
   },
   "devDependencies": {
-    "autoprefixer": "^9.8.5",
     "css-loader": "^3.6.0",
     "cssnano": "^4.1.10",
     "file-loader": "^6.0.0",
