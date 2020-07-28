@@ -16,40 +16,48 @@ import Search from './search';
 export default function App() {
   return (
     <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">All Notes</Link>
-            </li>
-            <li>
-              <Link to="/popular">Popular</Link>
-            </li>
-            <li>
-              <Link to="/favored">Favored</Link>
-            </li>
-            <li>
-              <Link to="/search">Search</Link>
-            </li>
-          </ul>
-        </nav>
+      <div className="container">
+        <div className="header">
+          <nav className="nav">
+            <ul>
+              <li>
+                <Link to="/">All Notes</Link>
+              </li>
+              <li>
+                <Link to="/popular">Popular</Link>
+              </li>
+              <li>
+                <Link to="/favored">Favored</Link>
+              </li>
+              <li>
+                <Link to="/search">Search</Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/popular">
-            <Popular />
-          </Route>
-          <Route path="/favored">
-            <Favored />
-          </Route>
-          <Route path="/search">
-            <Search />
-          </Route>
-          <Route path="/">
-            <All />
-          </Route>
+        <div className="content">
+          <Switch>
+            <Route path="/popular">
+              <Popular />
+            </Route>
+            <Route path="/favored">
+              <Favored />
+            </Route>
+            <Route path="/search">
+              <Search />
+            </Route>
+            <Route path="/">
+              <All />
+            </Route>
         </Switch>
+        </div>
+
+        <div className="footer">
+        </div>
+        
       </div>
     </Router>
   );
