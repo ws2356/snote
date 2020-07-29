@@ -61,9 +61,8 @@ nav ul li {
 }
 
 .content {
-  margin: 0 auto;
-  max-width: 800px;
-  background-color: aquamarine;
+  margin: 0 20px 0;
+  width: 100%;
   flex: 1;
 }
 
