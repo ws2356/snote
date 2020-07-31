@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
   Link
@@ -15,7 +14,6 @@ import Search from './search';
 
 export default function App() {
   return (
-    <Router>
       <div className="container">
         <div className="header">
           <nav className="nav">
@@ -36,8 +34,6 @@ export default function App() {
           </nav>
         </div>
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <div className="content">
           <Switch>
             <Route path="/popular">
@@ -54,11 +50,8 @@ export default function App() {
             </Route>
         </Switch>
         </div>
-
         <div className="footer">
         </div>
-        
       </div>
-    </Router>
   );
 }

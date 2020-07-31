@@ -62,7 +62,7 @@ function Paragraph(props: ParagraphProps) {
       <div className="popular-para-title">
         {title}
       </div>
-      <div className="popular-para-body">{createRandomText(len)}</div>
+      <p className="popular-para-body">{createRandomText(len)}</p>
     </div>
   )
 }
