@@ -1,4 +1,6 @@
 import express from 'express'
+import domServer from 'react-dom/server'
+import { StaticRouter } from 'react-router'
 import _ from 'lodash'
 import note from './ctrl/note'
 import dft from './ctrl/default'
@@ -30,7 +32,7 @@ app.all('*', async (req, res) => {
   await dft.handleDefaultRoute(req, res)
 })
 
-const port = 8787
+const port = 8201
 app.listen(port, () => {
   console.log(`snote listen on: ${port}`)
 })

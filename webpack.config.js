@@ -26,7 +26,9 @@ const webConfig = {
     ]
   },
   devServer: {
-    host: '0.0.0.0'
+    host: '0.0.0.0',
+    // port 不起作用
+    port: 8200
   },
   plugins: [
     new HtmlWebpackPlugin({
