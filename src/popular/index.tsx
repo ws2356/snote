@@ -12,10 +12,9 @@ import './popular.css'
 type PopularProps = any | null
 
 export default function Popular(props: PopularProps) {
-  const { url } = useRouteMatch();
   return (
     <HashRouter
-      basename={url}
+      basename="/"
     >
       <ul>
         <li>
