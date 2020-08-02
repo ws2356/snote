@@ -1,10 +1,11 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = {
+const webConfig = {
+  target: 'web',
   entry: './src/index.tsx',
   devtool: 'inline-source-map',
   output: {
-    path: __dirname + '/public',
+    path: __dirname + '/dist',
     filename: 'build/index.js'
   },
   resolve: {
@@ -40,4 +41,33 @@ module.exports = {
       }
     })
   ]
-}
+};
+
+const nodeConfig = {
+  target: 'node',
+  entry: './src/server/index.ts',
+  devtool: 'inline-source-map',
+  output: {
+    path: __dirname + '/dist',
+    filename: 'build/server.js'
+  },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js']
+  },
+  module: {
+    rules: [
+      // TODO: wansong, eslint loader
+      { test: /\.tsx?$/, loader: 'ts-loader' },
+      {
+	test: /\.css$/,
+	use: ['style-loader', 'css-loader', 'postcss-loader']
+      },
+      {
+	test: /\.(png|jp(e*)g|svg)$/,
+	use: 'file-loader'
+      }
+    ]
+  }
+};
+
+module.exports = [nodeConfig, webConfig];
