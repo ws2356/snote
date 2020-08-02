@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const nodeExternals = require('webpack-node-externals');
 
 const webConfig = {
   target: 'web',
@@ -56,6 +57,7 @@ const nodeConfig = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js']
   },
+  externals: [nodeExternals()],
   module: {
     rules: [
       // TODO: wansong, eslint loader
