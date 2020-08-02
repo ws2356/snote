@@ -47,7 +47,7 @@ const webConfig = {
 
 const nodeConfig = {
   target: 'node',
-  entry: './src/server/index.ts',
+  entry: './src/server/index.tsx',
   devtool: 'inline-source-map',
   output: {
     path: __dirname + '/dist',
@@ -62,11 +62,13 @@ const nodeConfig = {
       { test: /\.tsx?$/, loader: 'ts-loader' },
       {
 	test: /\.css$/,
-	use: ['style-loader', 'css-loader', 'postcss-loader']
+	// use: ['style-loader', 'css-loader', 'postcss-loader']
+        loader: 'ignore-loader'
       },
       {
 	test: /\.(png|jp(e*)g|svg)$/,
-	use: 'file-loader'
+	// use: 'file-loader'
+        loader: 'ignore-loader'
       }
     ]
   }
