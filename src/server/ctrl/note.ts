@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
 import _ from 'lodash'
 import { isNil, sendJson } from '../util'
-import { ec } from 'error'
+import { ec } from '../../error'
 
 class Note {
   async getMyNotes(req: Request, res: Response) {
