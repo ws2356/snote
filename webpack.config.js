@@ -46,6 +46,28 @@ const webConfig = {
   ]
 };
 
+const webConfig2 = {
+  ...webConfig,
+  entry: './src/index.server.tsx',
+  output: {
+    path: __dirname + '/dist',
+    filename: 'build/index.server.js'
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'snote',
+      filename: 'index.server.html',
+      template: 'src/template/index.server.html',
+      favicon: 'src/template/favicon.ico',
+      meta: {
+	viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0',
+	'theme-color': '#000000',
+	description: "Home page of snote"
+      }
+    })
+  ]
+}
+
 const nodeConfig = {
   target: 'node',
   entry: './src/server/index.tsx',
@@ -76,4 +98,4 @@ const nodeConfig = {
   }
 };
 
-module.exports = [nodeConfig, webConfig];
+module.exports = [nodeConfig, webConfig, webConfig2];
