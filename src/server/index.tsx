@@ -34,7 +34,10 @@ app.put('/api/modify/:id', async (req, res) => {
 })
 
 const INDEX_CONTENT = fs.readFileSync('dist/index.server.html').toString()
-const RE = new RegExp('\u001erenderToString\u001e')
+const PATTERN = '\u001erenderToString\u001e'
+const SEP_START = INDEX_CONTENT.indexOf(PATTERN)
+const PART1 = INDEX_CONTENT.substring(0, SEP_START)
+const PART2 = INDEX_CONTENT.substring(SEP_START + PATTERN.length)
 
 app.get("*", async (req, res) => {
   const isHash = /^\/popular(#|\/|$)/.test(req.url)
@@ -45,8 +48,11 @@ app.get("*", async (req, res) => {
     <App />
     </StaticRouter>
   )
-  const ret = INDEX_CONTENT.replace(RE, contentHtml)
-  res.send(ret)
+  res.contentType('text/html')
+  res.write(PART1)
+  res.write(contentHtml)
+  res.write(PART2)
+  res.end()
 })
 
 /* app.all('*', async (req, res) => { */
