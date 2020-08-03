@@ -5,7 +5,7 @@
   "scripts": {
     "build:dev": "webpack -p --mode development -d",
     "start": "webpack-dev-server -d --content-base ./dist",
-    "start:server": "node dist/build/server",
+    "start:server": "pm2 start dist/build/server.js --name snote",
     "test": "node scripts/test.js"
   },
   "dependencies": {
