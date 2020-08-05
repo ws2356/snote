@@ -6,6 +6,8 @@
     "build:dev": "webpack -p --mode development -d",
     "start": "webpack-dev-server -d --content-base ./dist",
     "start:server": "pm2 start dist/build/server.js --name snote",
+    "stop:server": "pm2 stop snote",
+    "restart:server": "yarn build:dev && yarn stop:server && yarn start:server",
     "test": "node scripts/test.js"
   },
   "dependencies": {

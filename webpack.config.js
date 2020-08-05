@@ -7,7 +7,7 @@ const webConfig = {
   devtool: 'inline-source-map',
   output: {
     path: __dirname + '/dist',
-    filename: 'build/index.js'
+    filename: 'build/[name].[contenthash].js'
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js']
@@ -43,7 +43,20 @@ const webConfig = {
 	description: "Home page of snote"
       }
     })
-  ]
+  ],
+  optimization: {
+    runtimeChunk: 'single',
+    moduleIds: 'hashed',
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
+    },
+  }
 };
 
 const webConfig2 = {
@@ -51,7 +64,7 @@ const webConfig2 = {
   entry: './src/index.server.tsx',
   output: {
     path: __dirname + '/dist',
-    filename: 'build/index.server.js'
+    filename: 'build/[name].[contenthash].js'
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -65,7 +78,20 @@ const webConfig2 = {
 	description: "Home page of snote"
       }
     })
-  ]
+  ],
+  optimization: {
+    runtimeChunk: 'single',
+    moduleIds: 'hashed',
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
+    },
+  }
 }
 
 const nodeConfig = {
